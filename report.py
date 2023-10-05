@@ -19,7 +19,7 @@ def create_window():
             listbox.column(col, anchor="center")
             listbox.grid(row=1,column=0,columnspan=2)
             listbox.place(x = 100, y = 180)
-        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="vedant123",database="GroceryStore")
+        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="Password",database="GroceryStore")
         cursor = db.cursor()
         cursor.execute("SELECT Employee.employeeId, Employee.name, COUNT(OrderDetails.orderId), SUM(OrderDetails.price) FROM Employee INNER JOIN OrderDetails ON Employee.employeeId = OrderDetails.employeeId GROUP BY Employee.employeeId, Employee.name")
         result = cursor.fetchall()
