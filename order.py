@@ -38,7 +38,7 @@ def create_window():
         productId = e3.get()
         quantity = e5.get()
         employeeId = e6.get()
-        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="vedant123", database="GroceryStore")
+        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="Password", database="GroceryStore")
         cursor = db.cursor()
         
         try:
@@ -86,7 +86,7 @@ def create_window():
     # deleting  Data
     def Delete():
         orderId = e1.get()
-        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="vedant123",database="GroceryStore")
+        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="Password",database="GroceryStore")
         cursor = db.cursor()
         try:
             cursor.execute(f"delete from OrderDetails where orderId = {orderId}")
@@ -113,7 +113,7 @@ def create_window():
         # price = e4.get()
         quantity = e5.get()
         employeeId = e6.get()
-        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="vedant123",database="GroceryStore")
+        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="Password",database="GroceryStore")
         cursor = db.cursor()
         try:
             cursor.execute(f"update OrderDetails set customerName = '{name}' , productId = {productId} , price = {price} , quantity = {quantity} , employeeId = {employeeId} where orderId = {orderId}")
@@ -141,7 +141,7 @@ def create_window():
             listbox.column(col, anchor="center")
             listbox.grid(row=1,column=0,columnspan=2)
             listbox.place(x = 10, y = 300)
-        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="vedant123",database="GroceryStore")
+        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="Password",database="GroceryStore")
         cursor = db.cursor()
         cursor.execute("select * from OrderDetails")
         result = cursor.fetchall()
