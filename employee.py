@@ -35,7 +35,7 @@ def create_window():
         phone = e3.get()
         age = e4.get()
         gender = e5.get()
-        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="vedant123",database="GroceryStore")
+        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="Password",database="GroceryStore")
         cursor = db.cursor()
         try:
             cursor.execute(f"insert into Employee values({id},'{name}',{phone},{age},'{gender}')")
@@ -62,7 +62,7 @@ def create_window():
         phone = e3.get()
         age = e4.get()
         gender = e5.get()
-        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="vedant123",database="GroceryStore")
+        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="Password",database="GroceryStore")
         cursor = db.cursor()
         cursor = db.cursor()
         try:
@@ -89,7 +89,7 @@ def create_window():
         phone = e3.get()
         age = e4.get()
         gender = e5.get()
-        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="vedant123",database="GroceryStore")
+        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="Password",database="GroceryStore")
         cursor = db.cursor()
         try:
             cursor.execute(f"update  Employee set name = '{name}' , phone = {phone} , age = {age} , gender = {gender} where employeeId = {id}")
@@ -117,7 +117,7 @@ def create_window():
             listbox.column(col, anchor="center")
             listbox.grid(row=1,column=0,columnspan=2)
             listbox.place(x = 10, y = 300)
-        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="vedant123",database="GroceryStore")
+        db = mysql.connector.connect(host="127.0.0.1", user="root", passwd="Password",database="GroceryStore")
         cursor = db.cursor()
         cursor.execute("select * from Employee")
         result = cursor.fetchall()
